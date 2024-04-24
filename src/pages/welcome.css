@@ -19,3 +19,12 @@
     border-radius: 10px;
     padding-bottom: 32px;
 }
+
+.welcome-img img {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    width: 500px;
+    margin: 130px auto;
+    border-radius: 10px;
+}

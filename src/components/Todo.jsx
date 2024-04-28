@@ -13,6 +13,12 @@ const Todo = ({todos, completeTodo, removeTodo, updateTodo}) => {
       value: ''
     });
   
+    const renderDueDate = (dueDate) => {
+      if (!dueDate) return null; 
+      const formattedDate = new Date(dueDate).toLocaleDateString(); 
+      return <span className="due-date">Date: {formattedDate}</span>;
+    };
+  
   const submitUpdate= value => {
     updateTodo(edit.id, value);
     setEdit({
@@ -27,19 +33,27 @@ const Todo = ({todos, completeTodo, removeTodo, updateTodo}) => {
   
   return todos.map((todo, index) => (
     <div
-      className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
+      className={todo.isComplete ? "todo-row complete" : "todo-row"}
       key={index}
     >
       <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+        {renderDueDate(todo.dueDate)}: 
         {todo.text}
       </div>
-      <div className='icons'>
-        <RiCloseCircleLine onClick={() => removeTodo(todo.id)}
-        className='delete-icon'/>  
-        <TiEdit onClick={() => setEdit({
-          id: todo.id,
-          value: todo.text})}
-        className='delete-icon'/>
+      <div className="icons">
+        <RiCloseCircleLine
+          onClick={() => removeTodo(todo.id)}
+          className="delete-icon"
+        />
+        <TiEdit
+          onClick={() =>
+            setEdit({
+              id: todo.id,
+              value: todo.text,
+            })
+          }
+          className="delete-icon"
+        />
       </div>
     </div>
   ));

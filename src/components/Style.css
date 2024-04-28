@@ -16,13 +16,28 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    width: 520px;
+    width: 600px;
     min-height: 600px;
     background: #0e101b;
     text-align: center;
     margin: 128px auto;
     border-radius: 10px;
     padding-bottom: 32px;
+}
+
+.date-picker {
+    position: relative;
+    padding: 16px;
+    border: none;
+    width: 110px;
+    height: 48px;
+    cursor: pointer;
+    outline: none;
+    background: linear-gradient(90deg,
+            rgba(93, 12, 255, 1) 0%,
+            rgba(155, 0, 250, 1) 100%);
+    color: #fff;
+    text-transform: capitalize;
 }
 
 h1 {
@@ -38,6 +53,9 @@ h1 {
 
 .todo-form {
     margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .todo-input {
@@ -55,8 +73,11 @@ h1 {
 }
 
 .todo-button {
+    position: relative;
     padding: 16px;
     border: none;
+    width: 110px;
+    height: 48px;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
     outline: none;
@@ -93,7 +114,6 @@ h1 {
     background: linear-gradient(90deg,
             rgba(255, 118, 20, 1) 0%,
             rgba(255, 84, 17, 1) 100%);
-
     padding: 16px;
     border-radius: 5px;
     width: 90%;

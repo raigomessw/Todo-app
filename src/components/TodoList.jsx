@@ -14,14 +14,14 @@ const TodoList = () => {
     }
   }, []);
 
-  const addTodo = (todo) => {
-    if (!todo.text || /^\s*$/.test(todo.text)) {
-      return;
-    }
-    const newTodos = [todo, ...todos];
-    setTodos(newTodos);
-    localStorage.setItem('todos', JSON.stringify(newTodos));
-  };
+const addTodo = (todo) => {
+  if (!todo.text || /^\s*$/.test(todo.text)) {
+    return;
+  }
+  const newTodos = [{ ...todo, dueDate: todo.dueDate || null }, ...todos]; // Adicionando a data de vencimento ou null se não fornecida
+  setTodos(newTodos);
+  localStorage.setItem("todos", JSON.stringify(newTodos));
+};
 
 const updateTodo = (todoId, newValue) => {
   if (!newValue.text || /^\s*$/.test(newValue.text)) {

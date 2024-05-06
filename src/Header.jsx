@@ -10,7 +10,7 @@ const Header = () => {
         <Link className="link-welcome" to="/">
           Welcome
         </Link>
-        <Link className="link-todoapp" to="/TodoApp">
+        <Link className="link-todoapp" to="/todo-app">
           TodoApp
         </Link>
         <Link className="link-about" to="/about">

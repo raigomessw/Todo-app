@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/todoApp" element={<TodoApp />} />
+        <Route path="/todo-app" element={<TodoApp />} />
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Welcome />} />
       </Routes>

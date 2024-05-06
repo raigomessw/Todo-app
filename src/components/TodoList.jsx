@@ -24,11 +24,14 @@ const addTodo = (todo) => {
 };
 
 const updateTodo = (todoId, newValue) => {
-  if (!newValue.text || /^\s*$/.test(newValue.text)) {
-    return;
-  }
-  setTodos(todos => todos.map(item => (item.id === todoId ? newValue : item)));
-};
+    if (!newValue.text || /^\s*$/.test(newValue.text)) {
+      return;
+    }
+  
+    const updatedTodos = todos.map(item => (item.id === todoId ? newValue : item));
+    setTodos(updatedTodos);
+    localStorage.setItem('todos', JSON.stringify(updatedTodos));
+  };
 
   const removeTodo = (id) => {
     const removeArr = [...todos].filter(todo => todo.id !== id);
